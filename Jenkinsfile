@@ -12,14 +12,14 @@ pipeline {
         stage('Prepare Scripts') {
             steps {
                 echo "Ensuring deploy script is executable..."
-                sh 'chmod +x ./scripts/deploy-prod.sh'
+                sh 'chmod +x ./scripts/deploy.sh'
             }
         }
 
         stage('Deploy Static Site') {
             steps {
-                echo "Running deploy-prod.sh to deploy infrastructure and static site..."
-                sh './scripts/deploy-prod.sh'
+                echo "Running deploy.sh to deploy infrastructure and static site..."
+                sh './scripts/deploy.sh'
             }
         }
     }
