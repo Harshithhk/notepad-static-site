@@ -45,5 +45,9 @@ terraform apply -var-file="$TF_VARS_FILE" --auto-approve
 # Sync static site files
 echo "Uploading static site files to S3 bucket: $BUCKET_NAME..."
 aws s3 sync ./static-files/ s3://$BUCKET_NAME \
-  --exclude "terraform/*" \
-  --exclude
+  --exclude "terraform/*" 
+
+
+echo "=================================================="
+echo "  Terraform Infrastructure Deployed Successfully" 
+echo "=================================================="
